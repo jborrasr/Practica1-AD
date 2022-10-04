@@ -6,72 +6,105 @@ public class PiedraPapelTijera {
         int salida = 0;
         String opcion;
         int parseOpcion;
-        while(salida == 0) {
+        int contador;
 
-
-           while (true) {
-               System.out.println("\n(1): Nivel Normal");
-               System.out.println("(2): Nivel Dificil");
-               try {
-                   opcion = sc.nextLine();
-                   parseOpcion = Integer.parseInt(opcion);
-                   if (parseOpcion < 1 || parseOpcion > 2) {
-
-                       System.out.println("Ingresa una opcion valida");
-                       continue;
-                   } else {
-                       break;
-                   }
-               } catch (Throwable exc) {
-
-                   System.out.println("Ingresa una opcion valida");
-               }
-           }
-           switch(parseOpcion) {
-
-               case 1:
-                   System.out.println("Nivel Normal");
-                   break;
-               case 2:
-                   System.out.println("Nivel Dificil");
-                   break;
-
-
-           }
-
-            while(true) {
-                System.out.println("\n(1): Piedra");
-                System.out.println("(2): Papel");
-                System.out.println("(3): Tijera");
-                System.out.println("(4): Salir");
+        while (salida == 0) {
+            while (true) {
+                System.out.println("\n(1): Nivel Normal");
+                System.out.println("(2): Nivel Dificil");
                 try {
-                    opcion = sc.nextLine();
-                    parseOpcion = Integer.parseInt(opcion);
-                    if(parseOpcion < 1 || parseOpcion > 4) {
+                    parseOpcion = sc.nextInt();
+                    if (parseOpcion < 1 || parseOpcion > 2) {
+
                         System.out.println("Ingresa una opcion valida");
                         continue;
-                    }else {
+                    } else {
                         break;
                     }
-                }catch(Throwable exc) {
+                } catch (Throwable exc) {
+
                     System.out.println("Ingresa una opcion valida");
                 }
             }
-            switch(parseOpcion) {
+            switch (parseOpcion) {
+
                 case 1:
-                    obj.piedra();
+                    System.out.println("Nivel Normal");
                     break;
                 case 2:
-                    obj.papel();
+                    System.out.println("Nivel Dificil");
                     break;
-                case 3:
-                    obj.tijera();
-                    break;
-                case 4:
-                    salida = obj.salida();
-                    sc.close();
-                    break;
+
             }
-           }
+
+            if (parseOpcion == 1) {
+                while (true) {
+                    System.out.println("\n(1): Piedra");
+                    System.out.println("(2): Papel");
+                    System.out.println("(3): Tijera");
+                    System.out.println("(4): Salir");
+                    try {
+                        parseOpcion = sc.nextInt();
+                        if (parseOpcion < 1 || parseOpcion > 4) {
+                            System.out.println("Ingresa una opcion valida");
+                            continue;
+                        } else {
+                            break;
+                        }
+                    } catch (Throwable exc) {
+                        System.out.println("Ingresa una opcion valida");
+                    }
+                }
+                switch (parseOpcion) {
+                    case 1:
+                        obj.piedra();
+                        break;
+                    case 2:
+                        obj.papel();
+                        break;
+                    case 3:
+                        obj.tijera();
+                        break;
+                    case 4:
+                        salida = obj.salida();
+                        sc.close();
+                        break;
+                }
+            } else if (parseOpcion == 2) {
+                while (true) {
+                    System.out.println("\n(1): Piedra");
+                    System.out.println("(2): Papel");
+                    System.out.println("(3): Tijera");
+                    System.out.println("(4): Salir");
+                    try {
+                        parseOpcion = sc.nextInt();
+                        if (parseOpcion < 1 || parseOpcion > 4) {
+                            System.out.println("Ingresa una opcion valida");
+                            continue;
+                        } else {
+                            break;
+                        }
+                    } catch (Throwable exc) {
+                        System.out.println("Ingresa una opcion valida");
+                    }
+                }
+                switch (parseOpcion) {
+                    case 1:
+                        obj.piedra();
+                        break;
+                    case 2:
+                        obj.papel();
+                        break;
+                    case 3:
+                        obj.tijera();
+                        break;
+                    case 4:
+                        salida = obj.salida();
+                        sc.close();
+                        break;
+
+                }
+            }
         }
     }
+}
